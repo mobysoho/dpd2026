@@ -137,6 +137,10 @@ header p {
     width: 100%;
 }
 
+#navigation-header .nav-botones div a{
+    -webkit-tap-highlight-color: transparent;
+}
+
 #navigation-header .btn {
     display: inline; 
 }
