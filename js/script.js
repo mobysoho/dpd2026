@@ -35,7 +35,7 @@ function renderizarGaleria(cantidad) {
             img.style.cursor = 'default';
         }
         img.alt = `Design ${num}`;
-        img.loading = "lazy";
+/*         img.loading = "lazy"; */
         gallery.appendChild(img);
     }
 }
