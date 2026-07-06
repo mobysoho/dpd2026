@@ -5,7 +5,6 @@ const RUTA_THUMBS = 'img/thumbs/';
 async function inicializarGaleria() {
     let inicio = 1, fin = TOTAL_DIAS, diseñosSubidos = 0;
 
-    // Búsqueda binaria única
     while (inicio <= fin) {
         let medio = Math.floor((inicio + fin) / 2);
         let nombre = String(medio).padStart(3, '0') + '.jpg';
@@ -41,7 +40,7 @@ function renderizarGaleria(cantidad) {
     }
 }
 
-// 3. Day count
+// Day count
 function calcularEstadisticas(diseñosSubidos) {
     const hoy = new Date();
     const diaActual = Math.floor((hoy - new Date(hoy.getFullYear(), 0, 1)) / 86400000) + 1;
@@ -52,7 +51,7 @@ function calcularEstadisticas(diseñosSubidos) {
     el.innerHTML = dif > 0 ? `Days behind:<br>${dif}` : (dif < 0 ? `Days ahead:<br>${Math.abs(dif)}` : `Days behind:<br>None!`);
 }
 
-// 4. Scroll effects
+// Scroll effects
 function actualizarEstadoBotones() {
     const btnPrincipio = document.querySelector('a[href="#beginning"]');
     const btnFinal = document.querySelector('a[href="#end"]');
@@ -96,7 +95,6 @@ function closeImg() { fullImgBox.style.display = "none"; fullImg.src = ""; docum
 
 document.addEventListener('DOMContentLoaded', () => {
     inicializarGaleria().then(() => {
-        // Ejecutar una vez cargado todo para corregir el estado inicial de los botones
         actualizarEstadoBotones();
     });
 
