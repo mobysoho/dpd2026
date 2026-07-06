@@ -7,7 +7,7 @@ async function inicializarGaleria() {
 
     while (inicio <= fin) {
         let medio = Math.floor((inicio + fin) / 2);
-        let nombre = String(medio).padStart(3, '0') + '.jpg';
+        let nombre = String(medio).padStart(3, '0') + '.webp';
         try {
             let respuesta = await fetch(RUTA_THUMBS + nombre, { method: 'HEAD' });
             if (respuesta.ok) { diseñosSubidos = medio; inicio = medio + 1; }
@@ -26,12 +26,12 @@ function renderizarGaleria(cantidad) {
         let num = String(i).padStart(3, '0');
         let img = document.createElement('img');
         if (i <= cantidad) {
-            img.src = `${RUTA_THUMBS}${num}.jpg`;
-            img.dataset.full = `img/full/${num}.png`;
+            img.src = `${RUTA_THUMBS}${num}.webp`;
+            img.dataset.full = `img/full/${num}.webp`;
             img.onclick = function() { openImg(this); };
             if (i === cantidad) img.id = 'latest';
         } else {
-            img.src = `${RUTA_THUMBS}000.jpg`;
+            img.src = `${RUTA_THUMBS}000.webp`;
             img.style.cursor = 'default';
         }
         img.alt = `Design ${num}`;
