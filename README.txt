@@ -4,7 +4,6 @@ NO IDEA.
 
 CHECK OUT MY GALLERY AT https://mobysoho.github.io/dpd2026/
 
-[Web not yet optimized for mobile plus all designs load at full res]
 
 
 
